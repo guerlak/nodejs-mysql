@@ -2,7 +2,6 @@ class Tables {
 
     init(connection) {
         this.connection = connection;
-        console.log("Tables were called...")
     }
 
     createAtendimentoTable() {
@@ -15,8 +14,6 @@ class Tables {
             if (err) {
                 return console.log(err)
             }
-            console.log("Table created")
-
         })
     }
 }

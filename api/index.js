@@ -1,5 +1,6 @@
 const express = require('express');
-const { route } = require("./routes/atendimentos.route.js")
+require('dotenv/config');
+const { atendimentoRoute } = require("./routes/atendimentos.route.js")
 const { Tables } = require("./infra/tables")
 
 const { connection } = require("./infra/dbconnection.js");
@@ -17,10 +18,10 @@ connection.connect(err => {
         app.use(express.json())
 
         app.listen(3000, () => {
-            console.log("app running on port 3000")
+            console.log("App running on port 3000")
         });
 
-        app.use("/", route)
+        app.use("/", atendimentoRoute)
     }
 
 })
